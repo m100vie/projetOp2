@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		
 		this.getSymptoms();
 		
-		GetSortAlphabetically (CountSymptom(getSymptoms()));
+		getSortAlphabetically (countSymptom(getSymptoms()));
 		
 		
 		
@@ -43,7 +44,13 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 					line = reader.readLine();
 				}
 				reader.close();
-			} catch (IOException e) {
+			} 
+			
+			catch(FileNotFoundException e) {
+			    System.out.println("Fichier non trouve !");
+			    }
+			
+		     catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -51,7 +58,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		return result;	    
 	}
 
-	private Map CountSymptom (ArrayList<String> result) {
+	private Map countSymptom (ArrayList<String> result) {
 		
 		Map<String,Integer> map = new HashMap<String,Integer>();
 		
@@ -71,7 +78,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 			
 	}
 
-	private void GetSortAlphabetically (Map countresult) throws IOException {
+	private void getSortAlphabetically (Map countresult) throws IOException {
 		FileWriter writer = new FileWriter ("result.out.txt");  
 		
 		Map sortedMap = new TreeMap(countresult);
