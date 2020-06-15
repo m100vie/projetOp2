@@ -1,60 +1,38 @@
 package builder;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 /**
  * 
  */
-public class FichierSimple implements FichierBuilder {
+public class FichierSimple extends FichierBuilder {
 	
-	private Fichier fichier;
-
-    /**
-     * Default constructor
-     */
 	public FichierSimple () {
-		this.fichier = new Fichier();
-	
+		fichier = new Fichier();
+		fichier.upload();
 	}
 	
-	public void buildContenu() {
-		fichier.setContenu("ça marche !");
-	}
-	
-   
-
-    /**
-     * 
-     */
-//    public void afficher() {
-//    	// TODO implement here
-//    	fichier.upload();
-//    	Collections. sort(fichier.getFile());
-//    	}
-   
-
-    /**
-     * 
-     */
-    public void enregister() {
-        // TODO implement here
-    }
-
-
-
 	@Override
-	public Fichier getFichier() {
+	public void print() throws IOException {
 		// TODO Auto-generated method stub
-		return this.fichier;
-	}
-
-	@Override
-	public void afficher() {
-		// TODO Auto-generated method stub
+		writer = new FileWriter ("result.out.txt"); 
 		
+		for(int i = 0 ; i < fichier.setFileTrie().size() ; i++){
+		
+			writer.write(fichier.setFileTrie().get(i)+"\n");
+   		}
+        writer.close();
 	}
-
+		
+	@Override
+	public void save() throws IOException {
+		
+		// TODO Auto-generated method stub
+		for(int i = 0 ; i < fichier.setFileTrie().size() ; i++)
+			System.out.print(fichier.setFileTrie().get(i) + "\n");
+	}
 	
-
 }

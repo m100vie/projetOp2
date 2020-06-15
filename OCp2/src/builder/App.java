@@ -1,7 +1,8 @@
 package builder;
 
 public class App {
-public static void main(String args[]) throws Exception {
+
+	public static void main(String args[]) throws Exception {
 	
 
 		
@@ -12,13 +13,7 @@ public static void main(String args[]) throws Exception {
      
      Fichier fichier = directeur.getFichier();
      
-     System.out.print("le résultat"+fichier);
 
-   
-	
-
-			
-		
-	}
+     }
 
 }

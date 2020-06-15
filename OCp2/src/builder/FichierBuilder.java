@@ -1,34 +1,25 @@
 package builder;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 /**
  * 
  */
-public interface  FichierBuilder {
+public abstract class  FichierBuilder {
+	
+	protected Fichier fichier;
+	protected FileWriter writer;
 	
 	
-    /**
-     * Default constructor
-     */
-  
-
-    /**
-     * @param file 
-     * 
-     */
-    public abstract void afficher();
-
-    /**
-     * 
-     */
-    public abstract void enregister();
+	public Fichier getFichier() {
+		return fichier;
+	};
     
-    public abstract Fichier getFichier();
+    public abstract void print() throws IOException;
     
-    public abstract void buildContenu();
-
-	
+    public abstract void save() throws IOException;
 
 }
