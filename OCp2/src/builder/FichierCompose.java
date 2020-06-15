@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * 
  */
-public class FichierCompose extends FichierBuilder {
+public class FichierCompose implements FichierBuilder {
 
     /**
      * Default constructor
@@ -17,7 +17,7 @@ public class FichierCompose extends FichierBuilder {
     /**
      * 
      */
-    protected void afficher() {
+    public void afficher() {
         // TODO implement here
     }
 
@@ -27,5 +27,15 @@ public class FichierCompose extends FichierBuilder {
     public void enregister() {
         // TODO implement here
     }
+
+	public Fichier getFichier() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void buildContenu() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

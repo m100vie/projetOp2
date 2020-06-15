@@ -11,54 +11,57 @@ import java.util.*;
  * 
  */
 public class Fichier {
-
+	
+	private String contenu;
     /**
      * Default constructor
      */
-    public Fichier() {
-    	this.upload();
-    }
 
+	public void setContenu(String contenu) {
+		this.contenu = contenu;
+	}
+ 
     /**
      * 
      */
-    public ArrayList<String> file;
+//    public  List<String> file;
 
     /**
      * @return
      */
-    public void upload() {
-        // TODO implement here
-    	if ("Symptoms.txt" != null) {
-			try {
-				BufferedReader reader = new BufferedReader (new FileReader("Symptoms.txt"));
-				String line = reader.readLine();
-				
-				while (line != null) {
-					file.add(line);
-					line = reader.readLine();
-				}
-				reader.close();
-			} 
-			
-			catch(FileNotFoundException e) {
-			    System.out.println("Fichier non trouve !");
-			    }
-			
-		     catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-	    
-    }
+//    public List<String> upload() {
+//        // TODO implement here
+//    	if ("Symptoms.txt" != null) {
+//			try {
+//				BufferedReader reader = new BufferedReader (new FileReader("Symptoms.txt"));
+//				String line = reader.readLine();
+//				
+//				while (line != null) {
+//					file.add(line);
+//					line = reader.readLine();
+//				}
+//				reader.close();
+//			} 
+//			
+//			catch(FileNotFoundException e) {
+//			    System.out.println("Fichier non trouve !");
+//			    }
+//			
+//		     catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		return file;
+//		
+//	    
+//    }
 
     /**
      * 
      */
-    public ArrayList<String> getFile() {
-        // TODO implement here
-    	return file;
-    }
+//    public ArrayList<String> getFile() {
+//        // TODO implement here
+//    	return file;
+//    }
 
 }

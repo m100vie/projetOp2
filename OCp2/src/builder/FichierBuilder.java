@@ -6,26 +6,29 @@ import java.util.*;
 /**
  * 
  */
-public abstract class FichierBuilder {
+public interface  FichierBuilder {
 	
-	protected Fichier fichier;
-
+	
     /**
      * Default constructor
      */
-    public  FichierBuilder() {
-    	fichier = new Fichier();
- 
-    }
+  
+
+    /**
+     * @param file 
+     * 
+     */
+    public abstract void afficher();
 
     /**
      * 
      */
-    protected abstract void afficher();
+    public abstract void enregister();
+    
+    public abstract Fichier getFichier();
+    
+    public abstract void buildContenu();
 
-    /**
-     * 
-     */
-    protected abstract void enregister();
+	
 
 }

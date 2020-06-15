@@ -6,26 +6,55 @@ import java.util.*;
 /**
  * 
  */
-public abstract class FichierSimple extends FichierBuilder {
+public class FichierSimple implements FichierBuilder {
+	
+	private Fichier fichier;
 
     /**
      * Default constructor
      */
+	public FichierSimple () {
+		this.fichier = new Fichier();
+	
+	}
+	
+	public void buildContenu() {
+		fichier.setContenu("ça marche !");
+	}
+	
    
 
     /**
      * 
      */
-    protected void afficher(ArrayList<String> file) {
-    	// TODO implement here
-    	Collections. sort(file);
-    }
+//    public void afficher() {
+//    	// TODO implement here
+//    	fichier.upload();
+//    	Collections. sort(fichier.getFile());
+//    	}
+   
 
     /**
      * 
      */
-    protected void enregister() {
+    public void enregister() {
         // TODO implement here
     }
+
+
+
+	@Override
+	public Fichier getFichier() {
+		// TODO Auto-generated method stub
+		return this.fichier;
+	}
+
+	@Override
+	public void afficher() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

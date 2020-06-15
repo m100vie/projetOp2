@@ -8,15 +8,21 @@ import java.util.*;
  */
 public class Directeur {
 	
-	protected FichierBuilder fichier ;
-
-    /**
-     * Default constructor
-     */
-   
-    
-    public void construit (FichierBuilder fichier) {
-    	this.fichier = fichier;
-    }
+	 private FichierBuilder fichierBuilder; 
+	  
+	    public Directeur(FichierBuilder fichierBuilder) 
+	    { 
+	        this.fichierBuilder = fichierBuilder; 
+	    } 
+	  
+	    public Fichier getFichier() 
+	    { 
+	        return this.fichierBuilder.getFichier(); 
+	    } 
+	  
+	    public void constructFichier() 
+	    { 
+	        this.fichierBuilder.buildContenu();
+	    } 
 
 }
