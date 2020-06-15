@@ -6,7 +6,7 @@ public class App {
 	
 
 		
-	 FichierBuilder fichierSimple = new FichierSimple(); 
+	 FichierBuilder fichierSimple = new FichierCompose(); 
      Directeur directeur = new  Directeur(fichierSimple); 
 
      directeur.constructFichier(); 

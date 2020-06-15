@@ -10,8 +10,9 @@ import java.util.*;
  */
 public abstract class  FichierBuilder {
 	
-	protected Fichier fichier;
-	protected FileWriter writer;
+	public Fichier fichier;
+	public FileWriter writer;
+	
 	
 	
 	public Fichier getFichier() {
