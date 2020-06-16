@@ -1,5 +1,6 @@
 package builder;
 
+import java.util.Scanner;
 
 /**
  * <b>Class application, contient main().</b>
@@ -28,13 +29,22 @@ public class App {
 	 * @throws Exception
 	 */
 	public static void main(String args[]) throws Exception {
-	
-	 FichierBuilder fichierSimple = new FichierCompose(); 
-     Directeur directeur = new  Directeur(fichierSimple); 
+		
+		Scanner reader = new Scanner(System.in);
+		FichierBuilder fichierBuilder;
+		
+		System.out.print("Voulez vous un fichier simple (1) ou un fichier avec occurrence (2) ? : ");
+		String choix = reader.next();
+		
+		if(choix.equals("1")) fichierBuilder = new FichierSimple();
+		
+		else fichierBuilder = new FichierCompose();
+		
+        Directeur directeur = new  Directeur(fichierBuilder); 
 
-     directeur.constructFichier(); 
+        directeur.constructFichier(); 
      
-     Fichier fichier = directeur.getFichier();
+     
      }
 
 }

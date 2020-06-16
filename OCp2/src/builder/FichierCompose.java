@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * <b>fichierCompose est une class permettant de construire un Fichier, de l'afficher trie de AZ et de compter les occurences,et de l'enregistrer.</b>
  * <p>
- * FichierSimple h�rite de FichierBuilder
+ * FichierSimple h�rite de FichierBuilder
  * </p>
  * 
  * @see Fichier
@@ -70,7 +70,10 @@ public class FichierCompose extends FichierBuilder {
            
         writer.write(me2.getKey() + " : "+me2.getValue()+"\n");
    		}
+        writer.write("Total nombre de symptômes : "+fichier.setFileTrie().size());
         writer.close();
+        System.out.println();
+		System.out.print("Total nombre de symptômes : "+fichier.setFileTrie().size());
 	}
 }
 
