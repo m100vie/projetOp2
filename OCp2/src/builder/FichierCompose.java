@@ -6,40 +6,55 @@ import java.io.IOException;
 import java.util.*;
 
 /**
+ * <b>fichierCompose est une class permettant de construire un Fichier, de l'afficher trie de AZ et de compter les occurences,et de l'enregistrer.</b>
+ * <p>
+ * FichierSimple hérite de FichierBuilder
+ * </p>
  * 
+ * @see Fichier
+ * @see FichierBuilder 
+ * 
+ * @author Matthieu
+ * @version 1.0
  */
 public class FichierCompose extends FichierBuilder {
 	
-	public Map<String,Integer> map;
-	public Map<String, Integer> sortedMap;
 	
+	/**
+	 *  Constructeur de FichierCompose () : 
+	 *
+	 *  @see class Fichier 
+	 *  @see upload()
+	 */
 	public FichierCompose() {
 		fichier = new Fichier();
 		fichier.upload();
 	}
 	
 	
-	@Override
+	/**
+	 * print() affiche le fichier trie de AZ et compte le nb d'occurence
+	 *
+	 */
 	public void print() throws IOException {
 		
-		// TODO Auto-generated method stub
 		map = new HashMap<String,Integer>();
 		
 		for(int i = 0 ; i < fichier.setFileTrie().size() ; i++)	{
 			
 			 if(map.containsKey(fichier.setFileTrie().get(i)))	{  
-				 
 				 map.replace(fichier.setFileTrie().get(i),map.get(fichier.setFileTrie().get(i))+1);
-			 
 			 }
-		
 			 else	{ 
 				 map.put(fichier.setFileTrie().get(i),1);
 			 }
 		}	
 	}
 
-	@Override
+	
+	/**
+	 * save() enregistre le fichier dans "result.out.txt"
+	 */
 	public void save() throws IOException {
 		// TODO Auto-generated method stub
         writer = new FileWriter ("result.out.txt");  
@@ -57,7 +72,6 @@ public class FichierCompose extends FichierBuilder {
    		}
         writer.close();
 	}
-		
 }
 
     

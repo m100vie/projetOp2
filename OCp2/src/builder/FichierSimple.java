@@ -6,33 +6,52 @@ import java.io.IOException;
 import java.util.*;
 
 /**
+ * <b>fichierSimple est une class permettant de construire un Fichier et de l'afficher trie de AZ et de l'enregistrer.</b>
+ * <p>
+ * FichierSimple hérite de FichierBuilder
+ * </p>
  * 
+ * @see Fichier
+ * @see FichierBuilder 
+ * 
+ * @author Matthieu
+ * @version 1.0
  */
 public class FichierSimple extends FichierBuilder {
 	
+	/**
+	 *  Constructeur de FichierSimple () : 
+	 *
+	 *  @see class Fichier 
+	 *  @see upload()
+	 */
 	public FichierSimple () {
 		fichier = new Fichier();
 		fichier.upload();
 	}
 	
-	@Override
+	
+	/**
+	 * print() affiche le fichier trie de AZ
+	 *
+	 */
 	public void print() throws IOException {
-		// TODO Auto-generated method stub
-		writer = new FileWriter ("result.out.txt"); 
 		
-		for(int i = 0 ; i < fichier.setFileTrie().size() ; i++){
-		
-			writer.write(fichier.setFileTrie().get(i)+"\n");
-   		}
-        writer.close();
+		for(int i = 0 ; i < fichier.setFileTrie().size() ; i++)
+			System.out.print(fichier.setFileTrie().get(i) + "\n");	
 	}
 		
-	@Override
+	
+	/**
+	 * save() enregistre le fichier dans "result.out.txt"
+	 */
 	public void save() throws IOException {
 		
-		// TODO Auto-generated method stub
-		for(int i = 0 ; i < fichier.setFileTrie().size() ; i++)
-			System.out.print(fichier.setFileTrie().get(i) + "\n");
+		writer = new FileWriter ("result.out.txt"); 
+				
+		for(int i = 0 ; i < fichier.setFileTrie().size() ; i++){
+			writer.write(fichier.setFileTrie().get(i)+"\n");
+		}
+		writer.close();
 	}
-	
 }

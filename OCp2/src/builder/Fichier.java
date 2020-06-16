@@ -8,14 +8,31 @@ import java.io.IOException;
 import java.util.*;
 
 
-
+/**
+ * <b>Fichier est la classe représentant le fichier "symptoms.txt" sous forme ArrayList</b>
+ *
+ * 
+ * @author Matthieu
+ * @version 1.0
+ */
 public class Fichier {
 	
 	
-	
- public ArrayList<String> file = new ArrayList<String>();
+	 /**
+	 * <b> Propriété de Fichier, contient le fichier "symptoms.txt" sous forme ArrayList</b>
+	 * 
+	 * @see upload()
+     */
+	public ArrayList<String> file = new ArrayList<String>();
 
-    public  void upload() {
+   
+	
+	/**
+	 * <b> Enregistre le fichier "Symptoms.txt" dans file grâce au BufferedReader </b>
+	 * 
+	 * @see file
+	 */
+	public  void upload() {
         // TODO implement here
     	if ("Symptoms.txt" != null) {
 			try {
@@ -37,16 +54,20 @@ public class Fichier {
 				e.printStackTrace();
 			}
 		}
-    	
-		
-		
-	    
     }
 
-    public ArrayList<String> setFileTrie() {
+    
+	
+	/**
+	 * <b> Tri file par ordre AZ grâce au Collections.sort()  </b>
+	 * 
+	 * @return file
+	 * 
+	 * @see file
+	 */
+	public ArrayList<String> setFileTrie() {
         // TODO implement here
     	Collections.sort(file);
     	return file;
     }
-
 }
