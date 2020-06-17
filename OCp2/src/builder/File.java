@@ -9,17 +9,17 @@ import java.util.*;
 
 
 /**
- * <b>Fichier est la classe représentant le fichier "symptoms.txt" sous forme ArrayList</b>
+ * <b>File is the class representing the file "symptoms.txt" in ArrayList form</b>
  *
  * 
  * @author Matthieu
- * @version 1.0
+ * @version 2.0
  */
-public class Fichier {
+public class File {
 	
 	
 	 /**
-	 * <b> Propriété de Fichier, contient le fichier "symptoms.txt" sous forme ArrayList</b>
+	 * <b> File property, contains the file "symptoms.txt" in ArrayList form</b>
 	 * 
 	 * @see upload()
      */
@@ -28,7 +28,7 @@ public class Fichier {
    
 	
 	/**
-	 * <b> Enregistre le fichier "Symptoms.txt" dans file grâce au BufferedReader </b>
+	 * <b> Save the file "Symptoms.txt" in file with the BufferedReader </b>
 	 * 
 	 * @see file
 	 */
@@ -59,7 +59,7 @@ public class Fichier {
     
 	
 	/**
-	 * <b> Tri file par ordre AZ grâce au Collections.sort()  </b>
+	 * <b> Sort file in AZ order thanks to Collections.sort ()  </b>
 	 * 
 	 * @return file
 	 * 
