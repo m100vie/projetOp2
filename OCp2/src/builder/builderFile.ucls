@@ -19,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="builder.App" project="OCp2" file="/OCp2/src/builder/App.java" binary="false" 
+  <class id="3" language="java" name="other.App" project="OCp2" file="/OCp2/src/other/App.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="943" y="112"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

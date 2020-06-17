@@ -1,6 +1,12 @@
-package builder;
+package other;
 
 import java.util.Scanner;
+
+import builder.BuilderFiles;
+import builder.Director;
+import builder.File;
+import builder.OccurrenceFile;
+import builder.SimpleFile;
 
 /**
  * <b>Class application, contains main ().</b>
