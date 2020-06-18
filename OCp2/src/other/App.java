@@ -1,5 +1,6 @@
 package other;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import builder.BuilderFiles;
@@ -34,7 +35,7 @@ public class App {
 	 * @param  args
 	 * @throws Exception
 	 */
-	public static void main(String args[]) throws Exception {
+	public static void main(String args[])  {
 		
 		Scanner reader = new Scanner(System.in);
 		BuilderFiles fichierBuilder;
@@ -48,9 +49,11 @@ public class App {
 		
         Director directeur = new  Director(fichierBuilder); 
 
-        directeur.buildfile(); 
-     
-     
-     }
-
+        try {
+			directeur.buildfile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+      }
 }

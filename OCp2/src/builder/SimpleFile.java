@@ -34,7 +34,7 @@ public class SimpleFile extends BuilderFiles {
 	 * print () displays the sorted file of AZ
 	 *
 	 */
-	public void print() throws IOException {
+	public void print()  {
 		
 		for(int i = 0 ; i < file.setFileTrie().size() ; i++)
 			System.out.print(file.setFileTrie().get(i) + "\n");
@@ -46,14 +46,28 @@ public class SimpleFile extends BuilderFiles {
 	/**
 	 * save() save file in "result.out.txt"
 	 */
-	public void save() throws IOException {
+	public void save()  {
 		
-		writer = new FileWriter ("result.out.txt"); 
+		try {
+			writer = new FileWriter ("result.out.txt");
+		
 				
 		for(int i = 0 ; i < file.setFileTrie().size() ; i++)
 			writer.write(file.setFileTrie().get(i)+"\n");
 			
 		writer.write("Total number of symptoms : "+file.setFileTrie().size());
-		writer.close();
+		}
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		finally{
+		try {
+			writer.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
 	}
 }

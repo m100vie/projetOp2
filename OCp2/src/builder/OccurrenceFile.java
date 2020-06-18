@@ -24,6 +24,8 @@ public class OccurrenceFile extends BuilderFiles {
 	
 	Mymap mymap;
 	Iterator<Entry<String, Integer>> iterator;
+	
+	
 	/**
 	 *  Builder of OccurrenceFile () : 
 	 *
@@ -48,8 +50,6 @@ public class OccurrenceFile extends BuilderFiles {
 	 *
 	 */
 	public void print() {
-		
-        
 		while(iterator.hasNext()) {
            
 			Entry<String, Integer> me2 = iterator.next();
@@ -65,10 +65,10 @@ public class OccurrenceFile extends BuilderFiles {
 	/**
 	 * save() save the file in "result.out.txt"
 	 */
-	public void save() throws IOException {
-		// TODO Auto-generated method stub
-        writer = new FileWriter ("result.out.txt");  
-                
+	public void save() {
+		try {
+			writer = new FileWriter ("result.out.txt");
+		
         iterator = mymap.mapinit(file.setFileTrie());
 		
         while(iterator.hasNext()) {
@@ -78,8 +78,18 @@ public class OccurrenceFile extends BuilderFiles {
             writer.write(me2.getKey() + " : "+me2.getValue()+"\n");
    		}
         writer.write("Total number of symptomes : "+file.setFileTrie().size());
-        writer.close();
-	}
+        } catch (IOException e) {
+			e.printStackTrace();
+		}  
+        finally { 
+        	try {
+			writer.close();
+			} 
+        	catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
+    }
 }
 
     

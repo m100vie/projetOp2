@@ -24,28 +24,35 @@ public class File {
      */
 	public ArrayList<String> file = new ArrayList<String>();
 	
-   
-	
+	BufferedReader reader;
+	String line;
 	/**
 	 * <b> Save the file "Symptoms.txt" in file with the BufferedReader </b>
 	 * 
 	 * @see file
 	 */
 	public  void upload() {
-        // TODO implement here
-    	if ("Symptoms.txt" != null) {
+        
+		if ("Symptoms.txt" != null) {
 			try {
-				BufferedReader reader = new BufferedReader (new FileReader("Symptoms.txt"));
-				String line = reader.readLine();
-				
+				 reader = new BufferedReader (new FileReader("Symptoms.txt"));
+				 line = reader.readLine();
+			
 				while (line != null) {
 					file.add(line);
 					line = reader.readLine();
 				}
-				reader.close();
-			} 
+			}
 			catch (IOException e) {
 				e.printStackTrace();
+			}
+			finally {	
+					try {
+						reader.close();
+					} 
+					catch (IOException e) {
+						e.printStackTrace();
+					}
 			}
 		}
     }
