@@ -21,7 +21,8 @@ import other.Mymap;
  */
 public class OccurrenceFile extends BuilderFiles {
 	
-	
+	Mymap mymap;
+	Iterator iterator;
 	/**
 	 *  Builder of OccurrenceFile () : 
 	 *
@@ -31,6 +32,10 @@ public class OccurrenceFile extends BuilderFiles {
 	public OccurrenceFile() {
 		file = new File();
 		file.upload();
+		
+		 mymap = new Mymap();
+        
+         iterator = mymap.mapinit(file.setFileTrie());
 	}
 	
 	
@@ -40,11 +45,8 @@ public class OccurrenceFile extends BuilderFiles {
 	 * print () displays the sort file of AZ and counts the number of occurrences
 	 *
 	 */
-	public void print() throws IOException {
+	public void print() {
 		
-		Mymap mymap = new Mymap();
-	    
-	    Iterator iterator = mymap.mapinit(file.setFileTrie());
         
 		while(iterator.hasNext()) {
            
@@ -65,9 +67,7 @@ public class OccurrenceFile extends BuilderFiles {
 		// TODO Auto-generated method stub
         writer = new FileWriter ("result.out.txt");  
         
-        Mymap mymap = new Mymap();
         
-        Iterator iterator = mymap.mapinit(file.setFileTrie());
 		
         while(iterator.hasNext()) {
            
