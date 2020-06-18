@@ -2,7 +2,6 @@ package builder;
 
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -24,7 +23,7 @@ public class File {
 	 * @see upload()
      */
 	public ArrayList<String> file = new ArrayList<String>();
-
+	
    
 	
 	/**
@@ -45,12 +44,7 @@ public class File {
 				}
 				reader.close();
 			} 
-			
-			catch(FileNotFoundException e) {
-			    System.out.println("Fichier non trouve !");
-			    }
-			
-		     catch (IOException e) {
+			catch (IOException e) {
 				e.printStackTrace();
 			}
 		}

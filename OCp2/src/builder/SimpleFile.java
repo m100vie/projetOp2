@@ -3,7 +3,6 @@ package builder;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
 
 /**
  * <b>SimpleFile is a class allowing to build a File and to display it sorted by AZ and to save it.</b>

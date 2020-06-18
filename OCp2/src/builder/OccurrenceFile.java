@@ -4,6 +4,7 @@ package builder;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+import java.util.Map.Entry;
 
 import other.Mymap;
 
@@ -22,7 +23,7 @@ import other.Mymap;
 public class OccurrenceFile extends BuilderFiles {
 	
 	Mymap mymap;
-	Iterator iterator;
+	Iterator<Entry<String, Integer>> iterator;
 	/**
 	 *  Builder of OccurrenceFile () : 
 	 *
@@ -31,7 +32,8 @@ public class OccurrenceFile extends BuilderFiles {
 	 */
 	public OccurrenceFile() {
 		file = new File();
-		file.upload();
+	    file.upload();
+		
 		
 		 mymap = new Mymap();
         
@@ -50,7 +52,7 @@ public class OccurrenceFile extends BuilderFiles {
         
 		while(iterator.hasNext()) {
            
-			Map.Entry me2 = (Map.Entry)iterator.next();
+			Entry<String, Integer> me2 = iterator.next();
 
            System.out.print(me2.getKey() + ": ");
            System.out.println(me2.getValue());
@@ -66,12 +68,12 @@ public class OccurrenceFile extends BuilderFiles {
 	public void save() throws IOException {
 		// TODO Auto-generated method stub
         writer = new FileWriter ("result.out.txt");  
-        
-        
+                
+        iterator = mymap.mapinit(file.setFileTrie());
 		
         while(iterator.hasNext()) {
            
-        	Map.Entry me2 = (Map.Entry)iterator.next();
+        	Entry<String, Integer> me2 = iterator.next();
 
             writer.write(me2.getKey() + " : "+me2.getValue()+"\n");
    		}
