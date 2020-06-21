@@ -25,35 +25,36 @@ public class App {
 
 	/**
 	 * 
-	 * @see    File
-	 * @see    BuilderFiles
-	 * @see    SimpleFile
-	 * @see    OccurrenceFile
-	 * @see    Director
-	 * @see    constructFichier()
-	 * @see    getFichier()
-	 * @param  args
-	 * @throws Exception
+	 * @see File
+	 * @see BuilderFiles
+	 * @see SimpleFile
+	 * @see OccurrenceFile
+	 * @see Director
+	 * @see constructFichier()
+	 * @see getFichier()
+	 * @param args
 	 */
-	public static void main(String args[])  {
-		
+	public static void main(String args[]) {
+
 		Scanner reader = new Scanner(System.in);
 		BuilderFiles fichierBuilder;
-		
+
 		System.out.print("Do you want a simple file (1) or a file with occurrence (2) ? :");
 		String choice = reader.next();
-		
-		if(choice.equals("1")) fichierBuilder = new SimpleFile();
-		
-		else fichierBuilder = new OccurrenceFile();
-		
-        Director directeur = new  Director(fichierBuilder); 
 
-        try {
+		if (choice.equals("1"))
+			fichierBuilder = new SimpleFile();
+
+		else
+			fichierBuilder = new OccurrenceFile();
+
+		Director directeur = new Director(fichierBuilder);
+
+		try {
 			directeur.buildfile();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
-      }
+		}
+	}
 }
