@@ -37,4 +37,4 @@ Import the project in eclipse
 
 ## Start-up
 
-Launch App from pakage other
+Launch App from package other
