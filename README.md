@@ -35,6 +35,6 @@ Change branches with the command: git checkout App_newApplication
 
 Import the project in eclipse
 
-## Démarrage
+## Start-up
 
 Launch App from pakage other
